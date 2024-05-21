@@ -1,0 +1,78 @@
+
+{% extends 'include/links.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+</style>
+
+<body>
+    <div>
+
+        <div class="col-md-12">
+            <div class="col-md-12">
+                
+                {% include 'include/naves.html' %}
+
+                <div class="col-md-12"> 
+                    {% for message in messages %}
+                        <div class="alert-warning p-5 text-center">
+                            <p>
+                                {{message}} hi
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-12 search-containt">
+                    <div class="">
+                        <div class="col-md-12 search-box">
+                            <img src="{% static 'image/icon1.png' %}" alt="image">
+                            <h3 style="text-transform: capitalize;">{{request.user}}</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit neque 
+                                error ea in aspernatur necessitatibus adipisci beatae rem omnis alias?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="body">
+                        <div class="bodys">
+                            <div class="body-contect">
+                                <div>
+                                    <label for="">image</label><br>
+                                    <img src="{% static 'image/008.png' %}" alt="image" width="50">
+                                </div>
+                                <div>
+                                    <label for="">name</label>
+                                    <h4>items</h4>
+                                </div>
+                                <div>
+                                    <label for="">ID number</label>
+                                    <h4>imopoly-39754839</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="body-contect">
+                                <div>
+                                    <a href="staffs.html">name of the person</a>
+                                </div>
+                                <div>
+                                    <a href="">edit item</a>
+                                </div>
+                                <div>
+                                    <a href="">delet item</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

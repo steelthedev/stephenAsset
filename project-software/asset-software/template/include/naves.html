@@ -1,0 +1,46 @@
+
+{% extends 'include/links.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    
+    <div class="col-md-12 search-img">
+        <img src="{% static 'image/Teams-icon.png' %}" alt="image">
+        <h3>school and staff proparty allocating</h3>
+    </div>
+
+    <div class="col-md-12">
+        <div class="top-menu">
+            <a href="{% url 'dashboard' %}" {% if 'dashboard/' == request.path %} class="menu-active" {% endif %}>
+                <div>
+                    dashboard
+                </div>
+            </a>
+            <a href="{% url 'asset' %}" {% if 'asset/' == request.path %} class="menu-active" {% endif %}>
+                <div>
+                    assets
+                </div>
+            </a>
+            <a href="{% url 'staffs' %}" {% if 'staffs/' == request.path %} class="menu-active" {% endif %}>
+                <div>
+                    {{users.count}} staffs
+                </div>
+            </a>
+            <a href="{% url 'addAsset' %}" {% if 'addAsset/' == request.path %} class="menu-active" {% endif %}>
+                <div>
+                    add asset
+                </div>
+            </a>
+            <a href="{% url 'createStaff' %}" {% if '/createStaff/' == request.path %} class="menu-active" {% endif %}>
+                <div>
+                    create staff
+                </div>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

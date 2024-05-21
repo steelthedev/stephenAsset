@@ -1,0 +1,47 @@
+
+{% extends 'include/links.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <div>
+
+        <div class="col-md-12">
+            <div class="col-md-12">
+
+                {% include 'include/naves.html' %}
+
+                <div class="col-md-12">
+                    <div class="body">
+                        <form action="">
+                            <div class="bodys">
+                                <div>
+                                    <label for="" style="margin-top: 20px;">asset name</label>
+                                    <input type="text" name="name" placeholder="item name" class="search">
+                                </div>
+                                <div>
+                                    <label for="" style="margin-top: 20px;">selete User of the asset</label>
+                                    <select name="user" id="{{users.id}}" class="search">
+                                        {% for users in users %}
+                                        <option value="{{users}}">{{users}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="" style="margin-top: 20px;">item image</label>
+                                    <input type="file" name="name" placeholder="item name" class="search">
+                                </div>
+                                <div>
+                                    <button class="search-button">Create</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

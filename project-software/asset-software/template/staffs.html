@@ -1,0 +1,65 @@
+
+{% extends 'include/links.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <div>
+
+        <div class="col-md-12">
+            <div class="col-md-12">
+                
+                {% include 'include/naves.html' %}
+
+                {% for users in users %}
+                <div class="col-md-12">
+                    <div class="body">
+                        <div class="bodys">
+                            <div class="body-contect">
+                                <div>
+                                    <label for="">user name</label>
+                                    <h4>{{users.username}}</h4>
+                                </div>
+                                <div>
+                                    <label for="">full name</label>
+                                    <h4>{{users.first_name}}</h4>
+                                </div>
+                                <div>
+                                    <p>Phone Number: {{users.phone_number}}</p>
+                                </div>
+                                <div>
+                                    <label for="">picture</label><br>
+                                    {% if users.profile_picture %}
+                                        <img src="{{users.profile_picture.url}}" alt="image" width="50">
+                                    {% else %}
+                                        <img src="{% static 'image/icon1.png' %}" alt="image" width="50">
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="body-contect">
+                                <div>
+                                    <p>department: {{users.department}}</p>
+                                </div>
+                                <div>
+                                    <p>address: {{users.gender}}</p>
+                                </div>
+                                <div>
+                                    <p>gender: {{users.gender}}</p>
+                                </div>
+                                <div>
+                                    <a href="">edit staff</a>
+                                    <a href="" style="margin-left: 8px;">delet staff</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}
