@@ -1,0 +1,46 @@
+
+{% extends 'include/links.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <div>
+
+        <div class="col-md-12">
+            <img src="{% static 'image/bg.jpg' %}" alt="bg image" id="bg-img">
+            <div class="col-md-12 bg">
+                <div class="col-md-12 bg-content">
+                    <h1>asset inventory tracking system</h1>
+                    <p>track by entring asset ID number</p>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div>
+                                <form action="search.html">
+                                    <input type="text" placeholder="Enter ID Number" name="id" class="search">
+                                    <button class="search-button">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <img src="{% static 'image/005.png' %}" alt="image" id="img1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-12 login">
+                        <a href="login.html">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

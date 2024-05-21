@@ -1,0 +1,76 @@
+
+{% extends 'include/links.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+</style>
+
+<body>
+    <div>
+
+        <div class="col-md-12">
+            <div class="col-md-12">
+                
+                {% include 'include/naves.html' %}
+
+                <div>
+                    {% for message in messages %}
+                        <div class="alert-warning p-5 text-center">
+                            <p>
+                                {{message}} hi
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-12">
+                    <div class="body">
+                        <form method="post" enctype="multipart/form-data">
+
+                            {% csrf_token %}
+
+                            <div class="bodys">
+                                <div>
+                                    <label for="" style="margin-top: 20px;">user name</label>
+                                    <input type="text" name="uname" placeholder="user name" class="search">
+                                </div>
+                                <div>
+                                    <label for="" style="margin-top: 20px;">other name</label>
+                                    <input type="text" name="oname" placeholder="other name" class="search">
+                                </div>
+                                <div>
+                                    <label for="" style="margin-top: 20px;">phone number</label>
+                                    <input type="text" name="number" placeholder="staff phone number" class="search">
+                                </div>
+                                <div>
+                                    <label for="" style="margin-top: 20px;">department</label>
+                                    <select name="department" id="" class="search">
+                                        <option value="cst">cst</option>
+                                        <option value="nud">nud</option>
+                                        <option value="slt">slt</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="" style="margin-top: 20px;">password</label>
+                                    <input type="password" name="password" placeholder="create a strong password" class="search">
+                                </div>
+                                <div>
+                                    <label for="" style="margin-top: 20px;">confirm password</label>
+                                    <input type="password" name="password2" placeholder="confirm password" class="search">
+                                </div>
+                                <div>
+                                    <button class="search-button">Create Staff</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}
