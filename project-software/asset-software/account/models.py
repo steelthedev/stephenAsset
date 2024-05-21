@@ -11,7 +11,7 @@ class Users(AbstractUser):
     address = models.CharField(max_length=250)
     date_joined = models.DateTimeField(verbose_name="date joined", auto_now_add=True)
     last_login = models.DateTimeField(verbose_name="last login", auto_now=True)
-    block = models.BooleanField(default=False)
+    is_blocked = models.BooleanField(default=False)
     username = models.CharField(max_length=100, blank=True, null=True, unique=True)
     gender = models.CharField(max_length=200)
     profile_picture = models.ImageField(upload_to='picture')
@@ -20,3 +20,5 @@ class Users(AbstractUser):
 
     def __str__(self):
         return self.username
+
+    
