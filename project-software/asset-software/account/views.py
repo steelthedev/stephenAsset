@@ -24,16 +24,16 @@ def CreateStaff(request):
             if Users.objects.filter(username=username).exists():
                 messages.info(request, 'Username is Taken')
                 return redirect('createStaff')
-            else:
-                user = Users.objects.create(
-                    username = username,
-                    phone_number = phone_number,
-                    first_name = othername,
-                    department = department,
-                    password = make_password(password)
-                )
-                messages.success(request, f'{username} Account Was Created Successfully, Log in Here')
-                return redirect('dashboard')
+            
+            Users.objects.create(
+                username = username,
+                phone_number = phone_number,
+                first_name = othername,
+                department = department,
+                password = make_password(password)
+            )
+            messages.success(request, f'{username} Account Was Created Successfully, Log in Here')
+            return redirect('dashboard')
         else:
             messages.info(request, 'The two Password did not match, please try again')
             return redirect('createStaff')
